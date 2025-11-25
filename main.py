@@ -111,7 +111,7 @@ while cap.isOpened():
                 
                 if not fist_active and time.time() - last_fist_time > fist_cooldown:
                     pyautogui.press(KEY_ACTION)
-                    cv2.putText(frame, "ATIVADO: Z", (50, 80), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 255), 2)
+                    cv2.putText(frame, "Z", (50, 80), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 255), 2)
                     fist_active = True
                     last_fist_time = time.time()
             
@@ -137,7 +137,7 @@ while cap.isOpened():
             # Pressiona a nova tecla
             pyautogui.keyDown(new_box[0])
             active_keys.add(new_box[0])
-            cv2.putText(frame, f"CONTINUO: {new_box[1]}", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, new_box[2], 2)
+            cv2.putText(frame, f"Continuo: {new_box[1]}", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, new_box[2], 2)
         
         elif current_time - last_continuous_time > continuous_cooldown:
             # Mantém a tecla pressionada
@@ -145,7 +145,7 @@ while cap.isOpened():
                 pyautogui.keyDown(new_box[0])
                 active_keys.add(new_box[0])
             last_continuous_time = current_time
-            cv2.putText(frame, f"CONTINUO: {new_box[1]}", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, new_box[2], 2)
+            cv2.putText(frame, f"Continuo: {new_box[1]}", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, new_box[2], 2)
     
     else:
         if current_box is not None:
